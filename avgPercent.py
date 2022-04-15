@@ -168,9 +168,10 @@ dem = 25401600
 gcf = gcd(num, dem)
 num = num // gcf
 dem = dem // gcf
-lastOut.write(f'Average Percent: {avgPercent*100:.5f}% [{num}/{dem}]\n')
 lastOut.write("Queues not covered:\n" + "\n".join(map("".join, lines)))
-print(f'Average Percent: {avgPercent*100:.5f}% [{num}/{dem}]')
+lastOut.write(f'Average Percent: {avgPercent*100:.5f}% [{num}/{dem}]\n')
 print("Queues not covered:\n" + "\n".join(map("".join, lines)))
+print(f'Average Percent: {avgPercent*100:.5f}% [{num}/{dem}]')
+
 lastOut.close()
 percentOut.close()
