@@ -6,9 +6,10 @@ Get the average of inputted set of setups based on coverage and score
 ```npm install hashmap``` - hashmap
 
 ## Run command
-```python avgPercent```
+```python avgPercent```  
 Mirror prompt - also include the mirror of setups  
-  * y if pieces for setup (-p) is the same for either direction of setup  
+  * y if pieces for setup (-p) is the same for either direction of setup
+
 Glued prompt - the fumens in setups.csv are already glued  
 Fractions prompt - the scoring in represented as a fraction rather than a percent in setup.csv  
 
