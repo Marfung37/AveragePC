@@ -82,7 +82,7 @@ fumens = []
 pieces = []
 percents = []
 for line in setups:
-    data = line.rstrip().split("	")
+    data = line.rstrip().split()
     if len(data) == 3:
         fumen, percent, piece = data
     else:
@@ -154,7 +154,8 @@ while percents:
             line.pop(highestPercentIndex + 1)
     
     # not covered at all
-    print(f'{builds[highestPercentIndex]}: {fumens[highestPercentIndex]} {coverCount}')
+    lastOut.write(f'{builds[highestPercentIndex]}: {fumens[highestPercentIndex]}\t{coverCount}\n')
+    print(f'{builds[highestPercentIndex]}: {fumens[highestPercentIndex]}\t{coverCount}')
     avgPercent += percents[highestPercentIndex] * (coverCount / numQueues)
     
     builds.pop(highestPercentIndex)
@@ -167,6 +168,9 @@ dem = 25401600
 gcf = gcd(num, dem)
 num = num // gcf
 dem = dem // gcf
+lastOut.write(f'Average Percent: {avgPercent*100:.5f}% [{num}/{dem}]\n')
+lastOut.write("Queues not covered:\n" + "\n".join(map("".join, lines)))
 print(f'Average Percent: {avgPercent*100:.5f}% [{num}/{dem}]')
 print("Queues not covered:\n" + "\n".join(map("".join, lines)))
+lastOut.close()
 percentOut.close()
